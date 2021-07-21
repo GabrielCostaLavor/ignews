@@ -14,18 +14,42 @@ export default NextAuth({
     }),
     // ...add more providers here
   ],
+/* jwt:{
+    signingKey:process.env.SIGNIN_KEY
+  },*/
   callbacks:{
     async signIn(user, account, profile){
-      const { email } = user;
-            
-      await fauna.query(
-        q.Create(
-          q.Collection('users'),
-          { data: {email}}
+      try {
+        const { email } = user;
+                  
+        await fauna.query(
+          q.If(
+            q.Not(
+              q.Exists(
+                q.Match(
+                  q.Index('user_by_email'),
+                  q.Casefold(user.email)
+                )
+              )
+            ),
+            q.Create(
+              q.Collection('users'),
+              { data: {email}}
+            ),
+            q.Get(
+              q.Match(
+                q.Index('user_by_email'),
+                q.Casefold(user.email)
+              )
+            )
+          )
         )
-      )
-
-      return true;
+      
+        return true;
+      } catch(err) {
+        console.log(err)
+        return false
+      }
     }
   },
   // A database is optional, but required to persist accounts in a database
