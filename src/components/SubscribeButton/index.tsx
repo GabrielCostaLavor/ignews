@@ -9,22 +9,27 @@ interface SubscribeButtonProps {
 
 
 export function SubscribeButton ({ priceId }: SubscribeButtonProps) {
+  const [session] = useSession();
+
   async function hundleSubscribe() {
-    const [session] = useSession();
+ 
     if (!session) {
       signIn('github');
       return;
     }
 
+    console.log('fer chegou ate aqui')
     //criacao da checkout session 
     try{ 
       const response = await api.post('/subscribe')
 
-      const { sessionId } = response.data;
+      const {sessionId} = response.data;
+
+      console.log (response.data);
 
       const stripe = await getStripeJs()
 
-      await stripe.redirectToCheckout({sessionId : sessionId});
+      await stripe.redirectToCheckout({ sessionId: sessionId.id })
     } catch(err) {
       alert(err.message);
     }

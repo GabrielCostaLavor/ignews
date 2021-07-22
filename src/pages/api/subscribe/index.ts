@@ -18,9 +18,8 @@ type User = {
 
 
 export default async (req:NextApiRequest, res:NextApiResponse) => {
+  const session = await getSession({req});
   if(req.method === 'POST') {
-    const session = await getSession({req});
-
     const user = await fauna.query<User>(
       q.Get(
         q.Match(
@@ -58,7 +57,7 @@ export default async (req:NextApiRequest, res:NextApiResponse) => {
       billing_address_collection: 'required',
       payment_method_types: ['card'],
        line_items: [
-        {price: 'price_1JFHyAH7TVuk6me0gtk7uFLm', quantity: 1},
+        {price: 'price_1JFqYaH7TVuk6me0bixfybjh', quantity: 1},
       ],
       mode: 'subscription',
       allow_promotion_codes: true,
