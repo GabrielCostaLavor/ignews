@@ -21,8 +21,8 @@
 - [NextJS](https://nextjs.org/docs/api-reference/next/image)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Prismic CMS](https://prismic.io/)
-- [Stripe] (https://stripe.com/en-mx?utm_campaign=BR_en_Search_Brand_Brand_EXA-15088005049&utm_medium=cpc&utm_source=google&ad_content=556495423089&utm_term=kwd-94834400&utm_matchtype=e&utm_adposition=&utm_device=c&gclid=CjwKCAiAs92MBhAXEiwAXTi252-ONzjhRlLxrjy-RKbmZvFsQUPdNqmSxqzfQ5S4Ch3LzhKBUa0A5hoCeIcQAvD_BwE)
-- [faunadb] (https://fauna.com/)
+- [Stripe](https://stripe.com/en-mx?utm_campaign=BR_en_Search_Brand_Brand_EXA-15088005049&utm_medium=cpc&utm_source=google&ad_content=556495423089&utm_term=kwd-94834400&utm_matchtype=e&utm_adposition=&utm_device=c&gclid=CjwKCAiAs92MBhAXEiwAXTi252-ONzjhRlLxrjy-RKbmZvFsQUPdNqmSxqzfQ5S4Ch3LzhKBUa0A5hoCeIcQAvD_BwE)
+- [faunadb](https://fauna.com/)
 - Sass
 
 ---
