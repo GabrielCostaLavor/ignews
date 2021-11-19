@@ -65,13 +65,13 @@ describe('Post Preview Page', () => {
       })
      } as any);
 
-    const response = await getStaticProps({ params: { slug: 'my-new-post' } });
+    const response = await getStaticProps({ params: { slug } });
 
      expect(response).toEqual(
        expect.objectContaining({
           props: {
             post: {
-              slug: 'my-new-post',
+              slug,
               title: 'My New Post',
               content: '<p>Post excerpt</p>',
               updatedAt: '01 de abril de 2021'
